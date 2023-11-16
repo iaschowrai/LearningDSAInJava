@@ -14,7 +14,7 @@ public class SecondMinMaxValue {
 
         for (int i = 0; i < arr.length; i++) {
             if(firstMin > arr[i]){
-                secondMin=firstMin;
+                secondMin = firstMin;
                 firstMin = arr[i];
             }
             else if(arr[i] < secondMin && arr[i] != firstMin){
@@ -22,12 +22,30 @@ public class SecondMinMaxValue {
             }
 
         }
-        System.out.println(firstMin);
-        System.out.println(secondMin);
+        System.out.println("Find Minimum Number ");
+        System.out.println("First Min Value : " + firstMin);
+        System.out.println("Second Min Value : " + secondMin);
+        System.out.println();
 
     }
 
     public static void secondMaxValueInArray(int[] arr){
+        int firstMax = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
 
+        for (int i = 0; i < arr.length; i++) {
+            if(firstMax < arr[i]){
+                secondMax = firstMax;
+                firstMax = arr[i];
+            }
+            else if(arr[i] < secondMax && arr[i] != firstMax){
+                secondMax = arr[i];
+            }
+
+        }
+
+        System.out.println("Find Maximum Number ");
+        System.out.println("First Max Value : " + firstMax);
+        System.out.println("Second Max Value : " + secondMax);
     }
 }
