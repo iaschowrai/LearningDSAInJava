@@ -4,10 +4,6 @@ public class CountDuplicateValue {
     public static void main(String[] args) {
         int number = 111111;
 
-        String a = "Ammara";
-        String b = "Ammara";
-
-        System.out.println(a == "Ammara");
         countDuplicateNumber(number);
     }
 
