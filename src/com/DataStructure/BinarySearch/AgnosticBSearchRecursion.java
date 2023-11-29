@@ -1,13 +1,15 @@
-package com.DataStructure.Easy;
+package com.DataStructure.BinarySearch;
 
-public class AgnosticBinarySearch {
+public class AgnosticBSearchRecursion {
     public static void main(String[] args) {
 //        int[] ascArr = {2,4,5,6,9,11,12,17,19,21};
         int[] ascArr = {21,19,16,14,12,11,8,5,3,1};
-        int key = 19;
+        int key = 1;
+
         int start = 0;
         int end = ascArr.length -1;
         int index;
+
         if(chkagnostic(ascArr, start, end)){
             index = isAscending(ascArr, key, start, end);
 
@@ -16,18 +18,12 @@ public class AgnosticBinarySearch {
 
         }
         System.out.println("index located at : " + index);
-
-//        int indexAsc = agnosticBinarySearch(ascArr, key);
-//        int indexDesc = agnosticBinarySearch(ascArr, key);
-//
-//        System.out.println("Index in Ascending Order: " + indexAsc);
-//        System.out.println("Index in Descending Order: " + indexDesc);
-
     }
-
+//  Agnostic Check
     private static boolean chkagnostic(int[] ascArr, int start,int end) {
         return ascArr[start] < ascArr[end];
     }
+//    Ascending
     private static int isAscending(int[] ascArr, int key, int start, int end) {
         if(start > end){
             return -1;
@@ -42,6 +38,7 @@ public class AgnosticBinarySearch {
             return isAscending(ascArr,key,mid + 1, end);
         }
     }
+//    Descending
     private static int isDescending(int[] ascArr, int key, int start, int end) {
         if(start > end){
             return -1;
@@ -57,34 +54,4 @@ public class AgnosticBinarySearch {
         }
     }
 
-//    private static int agnosticBinarySearch(int[] arr, int key) {
-//        int start = 0;
-//        int end = arr.length - 1;
-//
-//        boolean isAsc = arr[start] <= arr[end];
-//
-//        while (start <= end) {
-//            int mid = start + (end - start) / 2;
-//
-//            if (arr[mid] == key) {
-//                return mid;
-//            }
-//
-//            if (isAsc) {
-//                if (arr[mid] < key) {
-//                    start = mid + 1;
-//                } else {
-//                    end = mid - 1;
-//                }
-//            } else {
-//                if (arr[mid] < key) {
-//                    end = mid - 1;
-//                } else {
-//                    start = mid + 1;
-//                }
-//            }
-//        }
-//
-//        return -1; // Element not found
-//    }
 }
