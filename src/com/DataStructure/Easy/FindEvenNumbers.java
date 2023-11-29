@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class FindEvenNumbers {
     public static void main(String[] args) {
-        int[] nums = {12, 345, 2, 6, 7896};
+        int[] nums = {12, 345, 2, 66, 7896};
         int res = findEvenNumbers(nums);
         System.out.println(res);
     }
@@ -24,11 +24,17 @@ public class FindEvenNumbers {
     }
 
     static int countDigits(int element) {
-        int count = 0;
-        while (element > 0) {
-            count++;
-            element = element / 10;
+        if (element < 0){
+            element *= -1;
         }
-        return count;
+        return (int)(Math.log10(element)) + 1;
+
+
+//        int count = 0;
+//        while (element > 0) {
+//            count++;
+//            element = element / 10;
+//        }
+//        return count;
     }
 }
