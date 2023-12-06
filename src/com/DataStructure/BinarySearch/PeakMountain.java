@@ -13,7 +13,8 @@ public class PeakMountain {
 
         while (start <= end){
             int mid = start + (end - start) / 2;
-
+//  Important condition to check for next move of mid. the important concept of peakmountain is
+//            finding the peak element in the array, the mid -1 < mid > mid +1
             if ((mid == 0 || arr[mid - 1] <= arr[mid]) && (mid == arr.length - 1 || arr[mid + 1] <= arr[mid])) {
                 return mid;
             }
